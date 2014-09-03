@@ -256,7 +256,6 @@ input[type=checkbox].ace + .lbl, input[type=radio].ace + .lbl {
 }
 
 /* Skin Start */
-/*
 .navbar .navbar-inner {
     background-color: #fe9901 !important;
 }
@@ -332,7 +331,7 @@ input[type=checkbox].ace + .lbl, input[type=radio].ace + .lbl {
 .nav-list > li > .submenu li > .submenu li.open > a .arrow {
     color: #f4ae26 !important;
 }
-*/
+
 /*首页头部*/
 .navbar-inner .brand {
     font-family: "Microsoft YaHei", \5FAE\8F6F\96C5\9ED1, Sans-Serif, Arial;

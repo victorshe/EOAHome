@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <!--suppress HtmlUnknownTarget -->
 <html lang="zh-CN">
 <head>
@@ -51,7 +51,7 @@
             <span class="navbar-banner-control"><a href="#"><i class="icon-caret-up"></i></a></span>
             <div class="navbar-header pull-right" role="navigation">
                 <ul class="nav ace-nav">
-                    <li class="light-blue">
+                    <li class="light-green">
                         <a data-toggle="dropdown" href="#" class="dropdown-toggle">
                             <img class="nav-user-photo" src="/DigiShell/img/avatar.jpg" alt="Admin's Photo"/>
                             <span class="user-info">
@@ -507,7 +507,7 @@
 <script type="text/template" id="TEMPLATE_WIDGET_TPXW_BODY">
     <div class="widget-main">
         <div class="row-fluid">
-            <div class="span8">
+            <div class="span6">
                 <div id="<%=id+'_slide'%>" class="carousel slide" style="margin-bottom:0px;<%=model.length===0?'display:none':'' %>">
                     <ol class='carousel-indicators'>
                         <% var items = model.tpxw;if(items.length>1){_.each(items,function(item,key){%>
@@ -530,7 +530,7 @@
                     </div>
                 </div>
             </div>
-            <div class="span8">
+            <div class="span6">
                 <ul class="companyNewsList">
                     <% _.each(model.gsxw,function(item,key){%>
                     <li>
