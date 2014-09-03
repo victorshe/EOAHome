@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<!--suppress HtmlUnknownTarget -->
+<html lang="zh-CN">
+<head>
+    <title>首页 - BEIJING-FANUC</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!--basic styles-->
+
+    <link href="/DigiShell/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/DigiShell/css/bootstrap-responsive.min.css" rel="stylesheet"/>
+    <link href="/DigiShell/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="/DigiShell/css/digishell.css" rel="stylesheet" />
+    <!--[if IE 7]>
+    <link rel="stylesheet" href="/DigiShell/css/font-awesome-ie7.min.css" />
+    <![endif]-->
+    <!--page specific plugin styles-->
+
+    <!--fonts-->
+    <!--<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300" />-->
+
+    <!--ace styles-->
+
+    <link rel="stylesheet" href="/DigiShell/css/ace.min.css"/>
+    <link rel="stylesheet" href="/DigiShell/css/ace-responsive.min.css"/>
+    <link rel="stylesheet" href="/DigiShell/css/ace-skins.min.css"/>
+
+    <!--[if lte IE 8]>
+    <link rel="stylesheet" href="/DigiShell/css/ace-ie.min.css"/>
+    <![endif]-->
+
+    <!--inline styles related to this page-->
+
+    <!--ace settings handler-->
+    <script src="/DigiShell/js/ace/ace-extra.min.js"></script>
+</head>
+<body>
+<div class="navbar" id="navbar">
+    <script type="text/javascript">try {ace.settings.check('navbar', 'fixed');} catch (e) {}</script>
+
+    <div class="navbar-inner">
+        <div class="navbar-banner"><img src="/DigiShell/img/banner.jpg" style="width: 100%; max-height: 120px;" /></div>
+        <div class="container-fluid">
+            <a href="#" class="brand">
+                <small>
+                    协同办公管理平台
+                </small>
+            </a><!--/.brand-->
+            <span class="navbar-banner-control"><a href="#"><i class="icon-caret-up"></i></a></span>
+            <div class="navbar-header pull-right" role="navigation">
+                <ul class="nav ace-nav">
+                    <li class="light-green">
+                        <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+                            <img class="nav-user-photo" src="/DigiShell/img/avatar.jpg" alt="Admin's Photo"/>
+                            <span class="user-info">
+                                <small>欢迎您,</small>
+                                <span class="user-name"></span>
+                            </span>
+                            <i class="icon-caret-down"></i>
+                        </a>
+                        <ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-closer">
+                        <li>
+                            <a href="/Produce/XpageResource.nsf/FlowMindXp.xsp" target="_blank">
+                                <i class="icon-quote-left"></i>
+                                审批意见
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/DigiShell/img/User's%20Manual-20131031-V1.0.pdf" target="_blank">
+                                <i class="icon-book"></i>
+                                操作手册
+                            </a>
+                        </li>
+                        <!--
+                            <li>
+                                <a href="#config">
+                                    <i class="icon-cog"></i>
+                                    个人设置
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/Produce/WeboaConfig.nsf/modifyPasswordForm?openform" target="_blank">
+                                    <i class="icon-key"></i>
+                                    修改密码
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/Produce/DigiFlowOrgSysMng.nsf/UserPsnInfo_form?OpenForm&login" target="_blank">
+                                    <i class="icon-user"></i>
+                                    用户信息
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/Produce/DesignTools.nsf/ViewShow_form?OpenForm&login&thServer=&thDir=Produce&thDb=IndMng.nsf&thView=PsnAgentsListByPsnClassValid&count=17&page=1&checkboxFlag=yes&seeFlag=yes&bdoptdesname=%E6%9C%89%E6%95%88%E7%9A%84%E4%B8%9A%E5%8A%A1%E6%8E%88%E6%9D%83" target="_blank">
+                                    <i class="icon-flag-checkered"></i>
+                                    个人授权
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <i class="icon-question"></i>
+                                    帮助
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            -->
+                            <li>
+                                <a href="/names.nsf?logout&redirectto=/names.nsf?login">
+                                    <i class="icon-off"></i>
+                                    注销
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!--/.ace-nav-->
+        </div>
+        <!--/.container-fluid-->
+    </div>
+    <!--/.navbar-inner-->
+</div>
+
+<div class="main-container container-fluid">
+    <a class="menu-toggler" id="menu-toggler" href="#">
+        <span class="menu-text"></span>
+    </a>
+
+    <div class="sidebar" id="sidebar">
+        <script type="text/javascript">try {ace.settings.check('sidebar', 'fixed');} catch (e) {}</script>
+
+        <div class="sidebar-shortcuts" id="sidebar-shortcuts">
+            <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+                <a class="btn btn-small btn-success active" style="padding: 0px 2px" data-toggle="tab" href="#hotFormMenu" title="常用申请">
+                    <i class="icon-edit"></i>
+                    申请
+                </a>
+                <a class="btn btn-small btn-info"style="padding: 0px 2px"  data-toggle="tab" href="#hotAppMenu" title="常用应用">
+                    <i class="icon-tags"></i>
+                    应用
+                </a>
+                <a class="btn btn-small btn-warning" style="display: none" data-toggle="tab" href="#siteMenu" title="全部应用">
+                    <i class="icon-location-arrow"></i>
+                </a>
+                <a class="btn btn-small btn-danger" style="padding: 0px 2px" data-toggle="tab" href="#switchMenu" title="门户切换">
+                    <i class="icon-th-large"></i>
+                    门户
+                </a>
+                <a class="hide btn btn-small" style="display: none" data-toggle="tab" href="#appMenu" title="功能链接列表">
+                    <i class="icon-sitemap"></i>
+                </a>
+            </div>
+            <div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+                <a class="btn btn-success" data-toggle="tab" href="#hotFormMenu" title="常用申请"></a>
+                <a class="btn btn-info" data-toggle="tab" href="#hotAppMenu" title="常用应用"></a>
+                <a class="btn btn-warning" style="display: none" data-toggle="tab" href="#siteMenu" title="全部应用"></a>
+                <a class="btn btn-danger" data-toggle="tab" href="#switchMenu" title="门户切换"></a>
+                <a class="hide btn btn-small" style="display: none" data-toggle="tab" href="#appMenu" title="功能链接列表"></a>
+            </div>
+        </div>
+        <!--#sidebar-shortcuts-->
+        <div class="sidebar-menu">
+            <!-- 常用申请 -->
+            <div id="hotFormMenu" class="active"></div>
+            <!-- 常用模块 -->
+            <div id="hotAppMenu"></div>
+            <!-- 模块菜单 -->
+            <div id="siteMenu"></div>
+            <!-- 帮助 -->
+            <div id="switchMenu"></div>
+            <!-- 功能链接列表 -->
+            <div id="appMenu"></div>
+        </div>
+        <!--/.nav-list-->
+
+        <div class="sidebar-collapse" id="sidebar-collapse">
+            <i class="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
+        </div>
+
+        <script type="text/javascript">try {ace.settings.check('sidebar', 'collapsed');} catch (e) {}</script>
+    </div>
+
+    <div class="main-content">
+        <div class="breadcrumbs" id="breadcrumbs">
+            <script type="text/javascript">try {ace.settings.check('breadcrumbs', 'fixed');} catch (e) {}</script>
+
+            <ul class="breadcrumb">
+                <li class="active">
+                    <i class="icon-home home-icon"></i>
+                    首页
+                </li>
+            </ul>
+            <!--.breadcrumb-->
+
+            <div class="nav-search" id="nav-search" style="display:none">
+                <form class="form-search">
+                    <span class="input-icon">
+                        <input type="text" placeholder="搜索 ..." class="input-small nav-search-input"
+                               id="nav-search-input" autocomplete="off"/>
+                        <i class="icon-search nav-search-icon"></i>
+                    </span>
+                </form>
+            </div>
+            <!--#nav-search-->
+        </div>
+        <div class="page-content">
+            <!-- widgets -->
+            <div class="widgetContent row-fluid active"></div>
+            <!-- SiteMap -->
+            <div class="siteMap row-fluid"></div>
+            <!--视图框架-->
+            <div class="view row-fluid"></div>
+            <!-- 配置 -->
+            <div class="config row-fluid"></div>
+        </div>
+        <div class="space-24"></div>
+        <!--/.span-->
+        <!--/.page-content-->
+        <!-- 隐藏之 -->
+        <div class="ace-settings-container" id="ace-settings-container" style="display:none">
+            <div class="btn btn-app btn-mini btn-warning ace-settings-btn" id="ace-settings-btn">
+                <i class="icon-cog bigger-150"></i>
+            </div>
+
+            <div class="ace-settings-box" id="ace-settings-box">
+                <div>
+                    <div class="pull-left">
+                        <select id="skin-colorpicker" class="hide">
+                            <option data-skin="default" value="#438EB9">#438EB9</option>
+                            <option data-skin="skin-1" value="#222A2D">#222A2D</option>
+                            <option data-skin="skin-2" value="#C6487E">#C6487E</option>
+                            <option data-skin="skin-3" value="#D0D0D0">#D0D0D0</option>
+                        </select>
+                    </div>
+                    <span>&nbsp; Choose Skin</span>
+                </div>
+
+                <div>
+                    <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-navbar"/>
+                    <label class="lbl" for="ace-settings-navbar"> Fixed Navbar</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-sidebar"/>
+                    <label class="lbl" for="ace-settings-sidebar"> Fixed Sidebar</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-breadcrumbs"/>
+                    <label class="lbl" for="ace-settings-breadcrumbs"> Fixed Breadcrumbs</label>
+                </div>
+
+                <div>
+                    <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-rtl"/>
+                    <label class="lbl" for="ace-settings-rtl"> Right To Left (rtl)</label>
+                </div>
+            </div>
+        </div>
+        <!--/#ace-settings-container-->
+    </div>
+    <!--/.main-content-->
+</div>
+<!--/.main-container-->
+<div class="footer">
+    <div class="container">
+        <p>COPYRIGHT  © 2013 北京发那科机电有限公司</p>
+        <p>版权所有 未经允许请勿转载</p>
+    </div>
+</div>
+<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-small btn-inverse">
+    <i class="icon-double-angle-up icon-only bigger-110"></i>
+</a>
+
+<!--seajs-->
+<!-- build:script seajs -->
+<script id="seajsnode" src="/sea-modules/seajs/seajs/2.1.1/sea.js"></script>
+<!-- /build -->
+<!--[if !IE]>-->
+<script>seajs.config({vars:{'jqueryVersion':'2.0.3'}});</script>
+<!--<![endif]-->
+<!--[if IE]>
+<script> seajs.config({vars:{'jqueryVersion':'1.10.2'}});</script>
+<![endif]-->
+
+<!-- build:script inline main -->
+<script type="text/javascript">
+    seajs.config({
+        alias: {
+            'jquery': 'jquery/jquery/{jqueryVersion}/jquery',
+            'underscore': 'backbone/underscore/1.5.2/underscore-debug',
+            'backbone': 'backbone/backbone/1.1.0/backbone-debug',
+            'digiflow.viewpanel':'/DigiShell/js/digiflow/viewpanel',
+            'digiflow.exceltools': '/DigiShell/js/digiflow/exceltools',
+            'jquery.dataTables':'jquery/dataTables/1.9.4/jquery.dataTables.bootstrap-debug',
+            'jquery.datetimepicker':'jquery/bootstrap/datetimepicker/datetimepicker-debug',
+            'gridster':'jquery/gridster/0.1.0/jquery.gridster-debug',
+            'gritter':'jquery/gritter/1.7.4/jquery.gritter-debug',
+            'tree':'jquery/bootstrap/fuelux/tree-debug',
+            'slimscroll':'jquery/slimscroll/1.3.1/jquery.slimscroll-debug'
+        },
+        preload:["jquery","backbone","jquery/bootstrap/bootstrap/2.3.2/bootstrap-debug",
+            ("ontouchend" in document ? "jquery/jquery-mobile/1.3.2/jquery.mobile.custom.min":""),
+            ("JSON" in window ? "":"json2/json2"),
+            "/DigiShell/js/ace/ace.min",
+            "/DigiShell/js/ace/ace-elements.min"
+        ]
+    });
+    seajs.use("/DigiShell/js/digishell/core",function(digishell){
+		if(this.digishell && this.digishell.animate === false)$.fx.off = true;
+        this.digishell = digishell;
+    });
+</script>
+<!-- /build -->
+
+<!--basic scripts-->
+
+<!--[if lte IE 8]>
+<script src="/DigiShell/js/respond.min.js"></script>
+<script src="/DigiShell/js/html5shiv.js"></script>
+<script>try{window.digishell = window.digishell || {};window.digishell.animate = false;}catch(e){}</script>
+<![endif]-->
+
+<script type="text/template" id="TEMPLATE_ACE_NAV_TODO_BODY">
+    <ul class="pull-right dropdown-navbar navbar-pink dropdown-menu dropdown-caret dropdown-closer">
+        <li class="nav-header">
+            <i class=""></i>
+            <%=count%>条待办
+        </li>
+        <% _.each(items,function(item,key){ if(key>=4){return false;}  var title = item.StMsgText;if(title.indexOf("/@LNG@\\")!==-1){title=title.substring(5,title.indexOf("/@LNG@\\"))} %>
+        <li>
+            <a href="#<%=item['@UNID']%>">
+                <span class="msg-body">
+                    <span class="msg-title">
+                        <span class="blue"></span>
+                        <%=title%>
+                    </span>
+                    <span class="msg-time">
+                        <i class="icon-time"></i>
+                        <span><%=item["@Create"].replace(" GMT","")%></span>
+                    </span>
+                </span>
+            </a>
+        </li>
+        <% }); %>
+        <li>
+            <a href="#more">
+                查看所有待办
+                <i class="icon-arrow-right"></i>
+            </a>
+        </li>
+    </ul>
+</script>
+<script type="text/template" id="TEMPLATE_ACE_NAV_MSG_BODY">
+    <ul class="pull-right dropdown-navbar dropdown-menu dropdown-caret dropdown-closer">
+        <li class="nav-header">
+            <i class=""></i>
+            <%=count%>条消息
+        </li>
+        <% _.each(items,function(item,key){ if(key>=4){return false;}%>
+        <li>
+            <a href="#<%=item['@UNID']%>">
+                <span class="msg-body">
+                    <span class="msg-title">
+                        <span class="blue"></span>
+                        <%=item.StMsgText%>
+                    </span>
+                    <span class="msg-time">
+                        <i class="icon-time"></i>
+                        <span><%=item["@Create"].replace(" GMT","")%></span>
+                    </span>
+                </span>
+            </a>
+        </li>
+        <% }); %>
+        <li>
+            <a href="#more">
+                查看所有消息
+                <i class="icon-arrow-right"></i>
+            </a>
+        </li>
+    </ul>
+</script>
+
+<script type="text/template" id="TEMPLATE_WIDGET_XXFB_BODY">
+    <div class="widget-main no-padding">
+        <table class="table table-striped table-bordered table-hover no-thead">
+            <thead>
+            </thead>
+            <tbody>
+            <% _.each(model,function(row){ %>
+            <tr>
+                <td><a href="#<%=row['@UNID']%>"><%=row.StTitle%></a></td>
+                <td><%=row.STPUBTIME%></td>
+            </tr>
+            <% }); %>
+            </tbody>
+        </table>
+    </div>
+</script>
+
+<script type="text/template" id="TEMPLATE_WIDGET_RWXX_BODY">
+    <div class="widget-main no-padding">
+        <div class="tab-content no-padding">
+            <% _.each(model,function(info,key){ var tab = _.find(tabs,function(i){return i.id===key;});%>
+            <div id="widget_<%=widgetId+'_'+key%>" class="tab-pane <%=(key===tabs[0].id?'active':'') %>">
+                <table class="table table-striped table-bordered table-hover no-thead">
+                    <thead></thead>
+                    <tbody>
+                    <% _.each(info.items,function(row){ %>
+                    <tr>
+                        <td><a title="<%=row.title%>" href="<%=row.url%>" target="_blank"><%=row.title%></a></td>
+                        <td style="width:6em"><%=row.date%></td>
+                    </tr>
+                    <% }); %>
+                    </tbody>
+                </table>
+            </div>
+            <% }); %>
+        </div>
+    </div>
+</script>
+
+<script type="text/template" id="TEMPLATE_WIDGET_XZGG_BODY">
+    <div class="widget-main no-padding">
+        <div class="tab-content no-padding">
+            <% _.each(model,function(info,key){ var tab = _.find(tabs,function(i){return i.id===key;});%>
+            <div id="widget_<%=widgetId+'_'+key%>" class="tab-pane <%=(key===tabs[0].id?'in active':'') %>">
+                <table class="table table-striped table-bordered table-hover no-thead">
+                    <thead></thead>
+                    <tbody>
+                    <% _.each(info.items,function(row){ %>
+                    <tr>
+                        <td><a title="<%=row.StTitle%>" href="/Application/DigiFlowInfoPublish.nsf/0/<%=row['@UNID']%>?OpenDocument&login" target="_blank"><%=row.StTitle%></a><%=(new Date() - new Date(row.STPUBTIME.replace("-","/")))/1000/60/60/24<=3?'<span class="label label-success arrowed">New</span>':''%></td>
+                        <td style="width:6em"><%=row.STPUBTIME.substring(0,10)%></td>
+                    </tr>
+                    <% }); %>
+                    </tbody>
+                </table>
+            </div>
+            <% }); %>
+        </div>
+    </div>
+</script>
+
+<script type="text/template" id="TEMPLATE_WIDGET_BBS_BODY">
+    <div class="widget-main no-padding">
+        <div class="tab-content no-padding">
+            <% _.each(model,function(info,key){ var tab = _.find(tabs,function(i){return i.id===key;});%>
+            <div id="widget_<%=widgetId+'_'+key%>" class="tab-pane <%=(key===tabs[0].id?'in active':'') %>">
+                <table class="table table-striped table-bordered table-hover no-thead">
+                    <thead></thead>
+                    <tbody>
+                    <% _.each(info.items,function(row){ %>
+                    <tr>
+                        <td><a href="/bbs/DigiFlowBBSNew.nsf/0/<%=row['@UNID']%>?opendocument" target="_blank"><span class="text-error"><%=row.StTopFlag==="1"?"[顶]":""%><%=row.StBestFlag==="1"?"[精]":""%></span><%=row.StTitle%></a></td>
+                        <td style="width:9.5em"><%=row.StPostTime%></td>
+                    </tr>
+                    <% }); %>
+                    </tbody>
+                </table>
+            </div>
+            <% }); %>
+        </div>
+    </div>
+</script>
+
+<script type="text/template" id="TEMPLATE_WIDGET_TPXW_BODY">
+    <div class="widget-main no-padding">
+        <div id="<%=id+'_slide'%>" class="carousel slide" style="margin-bottom:0px;">
+            <ol class='carousel-indicators'>
+                <li data-target="#<%=id+'_slide'%>" data-slide-to="0" class="active"></li>
+                <li data-target="#<%=id+'_slide'%>" data-slide-to="1"></li>
+                <li data-target="#<%=id+'_slide'%>" data-slide-to="2"></li>
+                <li data-target="#<%=id+'_slide'%>" data-slide-to="3"></li>
+                <li data-target="#<%=id+'_slide'%>" data-slide-to="4"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="item active" title="FANUC总部派技师长到北京FANUC进行技术交流报道">
+                    <div style="height:258px">
+                        <img style="width:100%;" src="/DigiShell/img/img1.jpg?1212">
+                    </div>
+                    <div class="carousel-caption">
+                        <h4>FANUC总部派技师长到北京FANUC进行技术交流报道</h4>
+                    </div>
+                </div>
+                <div class="item" title="“送课”引爆学习潮——记深圳分公司送课活动">
+                    <div style="height:258px">
+                        <img style="width:100%;" src="/DigiShell/img/img2.jpg?1212">
+                    </div>
+                    <div class="carousel-caption">
+                        <h4>“送课”引爆学习潮——记深圳分公司送课活动</h4>
+                    </div>
+                </div>
+                <div class="item" title="FANUC数控系统应用中心2013年年会在重庆成功举办">
+                    <div style="height:258px">
+                        <img style="width:100%;" src="/DigiShell/img/img3.jpg?1212">
+                    </div>
+                    <div class="carousel-caption">
+                        <h4>FANUC数控系统应用中心2013年年会在重庆成功举办</h4>
+                    </div>
+                </div>
+                <div class="item" title="“从地摊青菜到盘中珍馐”之数据分析与呈现——记职场工具系列课程第八期">
+                    <div style="height:258px">
+                        <img style="width:100%;" src="/DigiShell/img/img4.jpg?1212">
+                    </div>
+                    <div class="carousel-caption">
+                        <h4>“从地摊青菜到盘中珍馐”之数据分析与呈现——记职场工具系列课程第八期</h4>
+                    </div>
+                </div>
+                <div class="item" title="SGM武汉-FANUC系统技术交流会活动报道">
+                    <div style="height:258px">
+                        <img style="width:100%;" src="/DigiShell/img/img5.jpg?1212">
+                    </div>
+                    <div class="carousel-caption">
+                        <h4>SGM武汉-FANUC系统技术交流会活动报道</h4>
+                    </div>
+                </div>
+            </div>
+            <a class="left carousel-control" href="#<%=id+'_slide'%>" data-slide="prev">&lsaquo;</a>
+            <a class="right carousel-control" href="#<%=id+'_slide'%>" data-slide="next">&rsaquo;</a>
+        </div>
+    </div>
+</script>
+
+<script type="text/template" id="TEMPLATE_WIDGET_MAIL_BODY">
+    <div class="widget-main no-padding alert alert-info" style="height:119px;cursor: pointer;position: relative;overflow:hidden;">
+        <div id="<%=id+'_slide'%>" class="carousel slide">
+            <div class="carousel-inner">
+                <% _.each(model.viewentry,function(entry,index){ if(entry["@unread"]!=="true"){return true;} %>
+                <div class="<%=index===0?'active':''%> item">
+                    <h4><%=entry.entrydata[4].text[0] %></h4>
+                    <div style="margin-top: 15px;color: #333333;"><%=entry.entrydata[4].text[0] %></div>
+                </div>
+                <% }); %>
+            </div>
+        </div>
+        <div class="badge" style="position: absolute;right: 20px;bottom: 20px;"></div>
+    </div>
+</script>
+
+<script type="text/template" id="TEMPLATE_WIDGET_KNOWLEDGE_BODY">
+    <div class="widget-main no-padding">
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+            <tr>
+                <% _.each(thead,function(th){ %>
+                <th style="width:<%=th.width||''%>"><i><%=th.ico||''%></i>
+                    <%=th.name%>
+                </th>
+                <% }); %>
+            </tr>
+            </thead>
+            <tbody>
+            <% _.each(model,function(row){ %>
+            <tr>
+                <td><a href="#"><%=row.StTitle%></a></td>
+                <td><%=row.StCreaterEN%></td>
+            </tr>
+            <% }); %>
+            </tbody>
+        </table>
+    </div>
+</script>
+
+<script type="text/template" id="TEMPLATE_WIDGET_TASK_BODY">
+    <div class="widget-main no-padding">
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+            <tr>
+                <% _.each(thead,function(th){ %>
+                <th style="width:<%=th.width||''%>"><i><%=th.ico||''%></i>
+                    <%=th.name%>
+                </th>
+                <% }); %>
+            </tr>
+            </thead>
+            <tbody>
+            <% _.each(model,function(row){ %>
+            <tr>
+                <td><a href="#>"><%=row.StTaskName%></a></td>
+                <td><%=row.StTaskStart%></td>
+                <td><%=row.StTaskEnd%></td>
+                <td><%=row.StXdrCN%></td>
+            </tr>
+            <% }); %>
+            </tbody>
+        </table>
+    </div>
+</script>
+</body>
+</html>
