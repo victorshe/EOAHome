@@ -218,10 +218,10 @@ define(function (require, exports) {
     }
 
     exports.DEFAULT_WIDGET = [
-        {id: "widget_gsxw", "wId": "gsxw", "col": 1, "row": 1, "size_x": 4, "size_y": 2},
-        {id: "widget_xzgg", "wId": "xzgg", "col": 1, "row": 3, "size_x": 4, "size_y": 2},
-        {id: "widget_rwxx", "wId": "RWXX", "col": 5, "row": 1, "size_x": 2, "size_y": 2},
-        {id: "widget_hydt", "wId": "hydt", "col": 5, "row": 3, "size_x": 2, "size_y": 2},
+        {id: "widget_gsxw", "wId": "gsxw", "col": 1, "row": 1, "size_x": 3, "size_y": 2},
+        {id: "widget_xzgg", "wId": "xzgg", "col": 1, "row": 3, "size_x": 3, "size_y": 2},
+        {id: "widget_rwxx", "wId": "RWXX", "col": 4, "row": 1, "size_x": 3, "size_y": 2},
+        {id: "widget_hydt", "wId": "hydt", "col": 4, "row": 3, "size_x": 3, "size_y": 2},
         //{id: "widget_bbs", "wId": "bbs", "col": 1, "row": 5, "size_x": 3, "size_y": 2}
     ];
 
