@@ -507,7 +507,7 @@
 <script type="text/template" id="TEMPLATE_WIDGET_TPXW_BODY">
     <div class="widget-main">
         <div class="row-fluid">
-            <div class="span8">
+            <div class="span6">
                 <div id="<%=id+'_slide'%>" class="carousel slide" style="margin-bottom:0px;<%=model.length===0?'display:none':'' %>">
                     <ol class='carousel-indicators'>
                         <% var items = model.tpxw;if(items.length>1){_.each(items,function(item,key){%>
@@ -530,7 +530,7 @@
                     </div>
                 </div>
             </div>
-            <div class="span8">
+            <div class="span6">
                 <ul class="companyNewsList">
                     <% _.each(model.gsxw,function(item,key){%>
                     <li>

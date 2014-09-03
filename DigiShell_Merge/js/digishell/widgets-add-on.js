@@ -145,16 +145,16 @@
         tabs: [
             {
                 id: "todo",
-                name: "待办<span class='hidden-1024'>任务</span>"
+                name: "待办"
             },
             {
                 id: "msg",
-                name: "<span class='hidden-1024'>我的</span>消息"
-            },
+                name: "消息"
+            }/*,
             {
                 id: "app",
-                name: "我的申请"
-            }
+                name: "申请"
+            }*/
         ],
         template: _.template($("#TEMPLATE_WIDGET_RWXX_BODY").html()),
         events: {
